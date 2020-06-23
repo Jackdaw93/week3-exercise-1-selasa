@@ -29,12 +29,16 @@ async function addFilm() {
 
     let response = await fetch(url, options);
     let results = await response.json();
-    console.log(results);
+    // console.log(results);
+    document.querySelector("form").reset();
+    window.location.reload();
   } catch (error) {
     console.error(error);
   }
+  document.getElementsByClassName("form-goup").value = "";
 }
 
+//Show All
 let position = document.querySelector(".show");
 let url1 = `https://5ef168da1faf160016b4d5c4.mockapi.io/api/film`;
 let options1 = {
@@ -48,7 +52,7 @@ fetch(url1, options1)
   .then((response) => response.json())
   .then((results) => {
     for (let data in results) {
-      console.log(results);
+      //   console.log(results);
 
       let card = document.createElement("div");
       card.innerHTML = `
