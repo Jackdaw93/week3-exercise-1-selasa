@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise Kamis 5</title>
+    <title>Exercise Selasa 1</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -20,49 +20,74 @@
         font-family: "Balsamiq Sans", cursive;
         background-color: #ddd;
       }
+      .container {
+        padding-top: 40px;
+      }
+      img {
+        width: 250px;
+        height: 250px;
+      }
+      .card {
+        margin-bottom: 30px;
+      }
+
+      .show {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      @media screen and(max-width: 500px) {
+        .row row-cols-1 {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div>
-        <p>Title:</p>
-        <input type="text" id="title" />
-      </div>
-      <div>
-        <p>Genre:</p>
-        <input type="text" id="genre" />
-      </div>
-      <div>
-        <p>Release:</p>
-        <input type="number" id="release" />
-      </div>
-      <div>
-        <p>Imgae Url:</p>
-        <input type="text" id="imgUrl" />
-      </div>
-      <div>
-        <p>Description:</p>
-        <textarea name="" cols="30" rows="5" id="descrip"></textarea>
-      </div>
-      <button type="button" class="btn btn-primary" id="submit">Submit</button>
-    </div>
-    <div>
-      <p id="show"></p>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">New Film's</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Category</a>
+            <a class="nav-item nav-link" href="#">Genre</a>
+            <a class="nav-item nav-link" href="#" aria-disabled="true"
+              >Release Year</a
+            >
+          </div>
+        </div>
+      </nav>
     </div>
 
-    <!-- <div class="container">
-      <div class="row">
+    <!-- bootstrap -->
+    <div class="container-sm mt-5">
+      <p class="h3 text-center">Daftar Film Terbaru</p>
+      <div class="row row-cols-1">
         <div class="col"></div>
         <div class="col">
           <div class="form-group">
             <label>Title: </label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="title" />
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label>Genre: </label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="genre" />
           </div>
         </div>
         <div class="col"></div>
@@ -72,19 +97,43 @@
         <div class="col">
           <div class="form-group">
             <label>Release Year: </label>
-            <input type="number" class="form-control" />
+            <input type="number" class="form-control" id="release" />
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label>Image Url: </label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="imgUrl" />
           </div>
         </div>
         <div class="col"></div>
       </div>
-    </div> -->
+      <!-- Description -->
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" rows="4" id="descrip"></textarea>
+            <div class="pt-2">
+              <button
+                type="button"
+                class="btn btn-primary btn-block"
+                id="submit"
+              >
+                Add Film
+              </button>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-2"></div>
+      </div>
+    </div>
+    <hr />
+    <div class="container mt-3">
+      <div class="show"></div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
